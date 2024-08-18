@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign-in</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" media="screen and (max-width: 800px)" href="response.css">
+    <style>
+        .sign-banner{
+            position: relative;
+        width: 100%;
+        height: 90vh;
+        overflow: hidden;
+        }
+        .sign-form img{
+            position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 140%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+        }
+        .sign-content{
+            position: absolute;
+    top: 8vh;
+    left: 45vw;
+        }
+        .sign-content h2 {
+    color:#405e66;
+    font-size: 45px;
+    text-align: center;
+  }
+  .sign-content form {
+  position: absolute;
+  top: 10vh;
+  left: -13.5vw;
+  /* left: -/vw; */
+  /* background: #00000045; */
+  /* border: none; */
+  padding: 30px;
+  /* border-radius: 20px; */
+}
+#login-container {
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 35vw;
+  padding: 18px 23px;
+  margin: 20px 0;
+  display: inline-block;
+  box-sizing: border-box;
+  opacity: 0.7;
+  font-size: 17px;
+  
+}
+input[type="text"]:focus {
+  background-color: lightgray;
+}
+input[type="password"]:focus {
+  background-color: lightgray;
+}
+label {
+  color:#131e21;
+  font-size: 25px;
+
+  
+}
+button {
+  background-color:#24383c;
+  color: white;
+  padding: 14px 20px;
+  margin: 20px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 4px;
+  opacity: 0.95 ;
+}
+button:hover {
+  /* opacity: 0.8; */
+  background-color: #242c2c;
+}
+.sign-content h3 a{
+  color: mediumblue;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <div class="logo">
+                <img src="lo.png" alt="logo">
+                <p>Wanderlust Journeys</p>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="signin.html">Sign-in</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="sign-banner">
+            <div class="sign-form">
+                <img src="signbg.jpg" alt="img" >
+            </div>
+            <div class="sign-content">
+                <h2>SIGN-IN</h2>
+                <form onsubmit="login(event)">
+                    
+                    <label for="username"><b>Username:</b></label>
+                    <input
+                      type="text"
+                      id="username"
+                      placeholder="Enter your email"
+                    />
+      
+                    <label for="password"><b>Password:</b></label>
+                    <input
+                      type="password"
+                      id="password"
+                      placeholder="Enter your password"
+                    />
+                    <h3><a href="#">Forgot Password</a></h3>
+                    <button onclick="login()"><b>Login</b></button>
+                  </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+      function login(event) {
+          event.preventDefault(); 
+          var username = document.getElementById("username").value;
+          var password = document.getElementById("password").value;
+
+          if (password.length < 8) {
+              alert("Password must contain at least 8 characters.");
+              return;
+          }
+
+          alert('Login successful!');
+          window.location.href = "blog.html";
+      }
+  </script>
+</body>
+</html>
